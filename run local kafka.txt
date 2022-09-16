@@ -1,4 +1,5 @@
 Get last version kafka and zookeeper from they websit
+Install JDK8 and set path in Enviroment Variables System
 
 1- Go to kafka folder> bin > windows
 	1- go to config folder edit server.properties
@@ -17,10 +18,10 @@ Get last version kafka and zookeeper from they websit
 	CMD\kafka\bin\windows> kafka-server-start.bat .\config\server.properties
 
 4- Create kafka topics
-	CMD\kafka\bin\windows> kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic {topic_name}  -note: if error zookeeper is not a recognized option run second comment
+	CMD\kafka\bin\windows> kafka-topics.bat --create --bootstrap-server localhost:2181 --replication-factor 1 --partitions 1 --topic {topic_name}  -note: if error zookeeper is not a recognized option run second comment
 	CMD\kafka\bin> kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic {topic_name}
 4-1- Get list of topics
-	CMD\kafka\bin\windows> kafka-topics.bat --list --zookeeper localhost:2181
+	CMD\kafka\bin\windows> kafka-topics.bat --list --bootstrap-server localhost:2181
 
 5- Create Producer for send message
 	CMD\kafka\bin\windows> kafka-console-producer.bat --broker-list localhost:9092 --topic {topic_name}
